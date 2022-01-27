@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Adresse extends Model
+{
+    use HasFactory;
+
+    public function personnel(){
+        return $this->hasMany(Personnel::class);
+    }
+
+    public function pays(){
+        return $this->belongsTo(Pays::class);
+    }
+
+    public function clients(){
+        return $this->belongsToMany(Client::class);
+    }
+    public function adressesLivraisons(){
+        return $this->belongsTo(Adresse::class);
+    }
+    public function adressesFacturations(){
+        return $this->belongsTo(Adresse::class);
+    }
+}
