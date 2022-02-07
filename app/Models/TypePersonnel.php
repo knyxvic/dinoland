@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Type_enclos extends Model
+class TypePersonnel extends Model
 {
     use HasFactory;
 
-    public function enclos(){
-        return $this->hasMany(Enclos::class);
+    protected $fillable = ['nom'];
+
+    public function personnels(){
+        return $this->hasMany(Personnel::class);
     }
 }

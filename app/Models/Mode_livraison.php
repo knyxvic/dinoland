@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Mode_livraison extends Model
 {
     use HasFactory;
-    public function produits(){
-        return $this->hasMany(Produit::class);
+
+    protected $fillable = ['nom'];
+
+    public function commandes(){
+        return $this->hasMany(Commande::class);
     }
 }

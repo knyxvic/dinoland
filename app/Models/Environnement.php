@@ -9,6 +9,8 @@ class Environnement extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nom'];
+
     public function enclos(){
         return $this->belongsToMany(Enclos::class)->withPivot('superficie');
     }

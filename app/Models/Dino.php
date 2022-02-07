@@ -9,6 +9,7 @@ class Dino extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nom','taille', 'poids', 'espece_id', 'nourriture_id'];
     public function caracteristiques(){
         return $this->belongsToMany(Caracteristique::class);
     }

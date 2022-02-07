@@ -11,6 +11,7 @@ class Caracteristique extends Model
 
     protected $fillable = ['nom'];
 
+
     public function dinos(){
         return $this->belongsToMany(Dino::class);
     }

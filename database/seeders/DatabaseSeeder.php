@@ -9,6 +9,7 @@ use App\Models\Dino;
 use App\Models\Environnement;
 use App\Models\Personnel;
 use App\Models\Produit;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         \App\Models\Pays::factory(10)->has(
             \App\Models\Adresse::factory(10)
     )->create();
@@ -96,9 +98,10 @@ class DatabaseSeeder extends Seeder
                     \App\Models\Enclos::all()->random(rand(1,3))->modelKeys()
                 );
             });
-        });;
+        });
 
 
+        User::factory(10)->create();
 
 
 

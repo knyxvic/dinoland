@@ -9,12 +9,12 @@ class Personnel extends Model
 {
     use HasFactory;
 
-    public function adresseLivraison(){
+    protected $guarded = ['id'];
+
+    public function adresse(){
         return $this->belongsTo(Adresse::class);
     }
-    public function adresseFacturation(){
-        return $this->belongsTo(Adresse::class);
-    }
+
     public function enclos(){
         return $this->belongsToMany(Enclos::class);
     }

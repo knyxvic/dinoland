@@ -9,6 +9,8 @@ class Adresse extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function personnel(){
         return $this->hasMany(Personnel::class);
     }

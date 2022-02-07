@@ -2062,6 +2062,8 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./environnement */ "./resources/js/environnement.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -2092,6 +2094,26 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/environnement.js":
+/*!***************************************!*\
+  !*** ./resources/js/environnement.js ***!
+  \***************************************/
+/***/ (() => {
+
+/*var environnements = document.getElementById("environnements");
+for (const environnement of environnements.selectedOptions) {
+    console.log(environnement.text)
+    console.log(environnement.value)
+    console.log(environnements.parentElement)
+    var input = document.createElement("input");
+    input.type = "text";
+    input.name = environnement.name;
+    container.appendChild(input); // put it into the DOM
+}
+*/
 
 /***/ }),
 

@@ -9,6 +9,8 @@ class Enclos extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function dinos(){
         return $this->belongsToMany(Dino::class)->withPivot('dateArrive','dateSortie');
     }
@@ -16,11 +18,15 @@ class Enclos extends Model
     public function typeEnclos(){
         return $this->belongsTo(TypeEnclos::class);
     }
-    public function environnement(){
+    public function environnements(){
         return $this->belongsToMany(Environnement::class)->withPivot('superficie');
     }
     public function personnels(){
         return $this->belongsToMany(Personnel::class);
+    }
+
+    public function climat(){
+        return $this->belongsTo(Climat::class);
     }
 
 }

@@ -9,6 +9,8 @@ class Pays extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nom'];
+
     public function adresses(){
         return $this->hasMany(Adresse::class);
     }

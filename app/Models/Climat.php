@@ -9,6 +9,8 @@ class Climat extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nom'];
+
     public function enclos(){
         return $this->hasMany(Enclos::class);
     }
