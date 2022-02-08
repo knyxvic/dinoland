@@ -43,7 +43,7 @@
                     </td>
                     <td>
                         <a href="{{route('personnels.show', $personnel->id)}}" class="btn btn-primary">Modifier</a>
-                        {!! Form::open(['url'=>'personnels/'.$personnel->id,'method' => 'delete']) !!}
+                        {!! Form::open(['admin/url'=>'personnels/'.$personnel->id,'method' => 'delete']) !!}
                         {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                         {!! Form::close() !!}
                     </td>

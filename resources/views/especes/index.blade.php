@@ -23,7 +23,7 @@
                         @if($espece->dinos->count()>0)
                             Ne peut pas être supprimer car des dinosaures sont associés
                         @else
-                        {!! Form::open(['url'=>'especes/'.$espece->id,'method' => 'delete']) !!}
+                        {!! Form::open(['url'=>'admin/especes/'.$espece->id,'method' => 'delete']) !!}
                         {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                         {!! Form::close() !!}
                         @endif

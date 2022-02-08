@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TypePersonnelRequest;
 use App\Models\TypePersonnel;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class TypePersonnelController extends Controller
     public function create(){
         return view('typesPersonnels.create');
     }
-    public function store(Request $request){
+    public function store(TypePersonnelRequest $request){
         TypePersonnel::create($request->all());
         return redirect()->route('typesPersonnels.index');
     }
@@ -29,7 +30,7 @@ class TypePersonnelController extends Controller
             return redirect()->route('typesPersonnels.index');
         }
     }
-    public function update(Request $request, $id){
+    public function update(TypePersonnelRequest $request, $id){
         $typePersonnels = TypePersonnel::find($id);
         $typePersonnels->nom = $request->nom;
         $typePersonnels->save();

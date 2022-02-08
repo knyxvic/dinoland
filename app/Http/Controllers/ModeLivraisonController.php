@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ModeLivraisonRequest;
 use App\Models\Mode_livraison;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class ModeLivraisonController extends Controller
     public function create(){
         return view('modesLivraisons.create');
     }
-    public function store(Request $request){
+    public function store(ModeLivraisonRequest $request){
         Mode_livraison::create($request->all());
         return redirect()->route('modesLivraisons.index');
     }
@@ -29,7 +30,7 @@ class ModeLivraisonController extends Controller
             return redirect()->route('modesLivraisons.index');
         }
     }
-    public function update(Request $request, $id){
+    public function update(ModeLivraisonRequest $request, $id){
         $modeLivraison = Mode_livraison::find($id);
         $modeLivraison->nom = $request->nom;
         $modeLivraison->save();

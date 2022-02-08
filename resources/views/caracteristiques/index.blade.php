@@ -23,7 +23,7 @@
                         @if($caracteristique->dinos->count()>0)
                             Ne peut pas être supprimer car des dinosaures sont associés
                         @else
-                        {!! Form::open(['url'=>'caracteristiques/'.$caracteristique->id,'method' => 'delete']) !!}
+                        {!! Form::open(['url'=>'admin/caracteristiques/'.$caracteristique->id,'method' => 'delete']) !!}
                         {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                         {!! Form::close() !!}
                         @endif

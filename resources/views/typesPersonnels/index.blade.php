@@ -22,7 +22,7 @@
                     <td>@if($typePersonnels->personnels->count()>0)
                             Ne peut pas être supprimer car des enclos sont associés
                         @else
-                            {!! Form::open(['url'=>'typesPersonnels/'.$typePersonnels->id,'method' => 'delete']) !!}
+                            {!! Form::open(['url'=>'admin/typesPersonnels/'.$typePersonnels->id,'method' => 'delete']) !!}
                             {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                             {!! Form::close() !!}
                         @endif

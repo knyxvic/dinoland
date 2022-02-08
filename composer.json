@@ -15,9 +15,11 @@
     },
     "require-dev": {
         "bangnokia/laravel-serve-livereload": "^1.1",
+        "barryvdh/laravel-debugbar": "^3.6",
         "beyondcode/laravel-er-diagram-generator": "^1.5",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
+        "laravel/breeze": "^1.7",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",

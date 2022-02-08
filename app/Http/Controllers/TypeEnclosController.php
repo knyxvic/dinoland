@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TypeEnclosRequest;
 use App\Models\TypeEnclos;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class TypeEnclosController extends Controller
     public function create(){
         return view('typeEnclos.create');
     }
-    public function store(Request $request){
+    public function store(TypeEnclosRequest $request){
         Type_enclos::create($request->all());
         return redirect()->route('typeEnclos.index');
     }
@@ -29,7 +30,7 @@ class TypeEnclosController extends Controller
             return redirect()->route('typeEnclos.index');
         }
     }
-    public function update(Request $request, $id){
+    public function update(TypeEnclosRequest $request, $id){
         $typeEnclos = Type_enclos::find($id);
         $typeEnclos->nom = $request->nom;
         $typeEnclos->save();

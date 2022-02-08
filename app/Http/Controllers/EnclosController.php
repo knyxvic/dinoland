@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EnclosRequest;
 use App\Models\Climat;
 use App\Models\Personnel;
 use App\Models\TypeEnclos;
@@ -51,7 +52,7 @@ class EnclosController extends Controller
         return view('enclos.create',['typesEnclos'=>$typesEnclos, 'climats'=>$climats, 'environnements'=>$environnements, 'personnels'=>$personnels]);
     }
 
-    public function store(Request $request){
+    public function store(EnclosRequest $request){
         $enclos = Enclos::create($request->all());
         $enclos->environnements()->sync($request->environnements_id);
         $enclos->personnels()->sync($request->personnels_id);
@@ -69,7 +70,7 @@ class EnclosController extends Controller
         }
     }
 
-    public function update(Request $request, $id){
+    public function update(EnclosRequest $request, $id){
         $enclos = Enclos::findOrFail($id);
         $enclos->update($request->all());
         $enclos->environnements()->sync($request->environnements_id);

@@ -22,7 +22,7 @@
                     <td>@if($climat->enclos->count()>0)
                             Ne peut pas être supprimer car des enclos sont associés
                         @else
-                            {!! Form::open(['url'=>'climats/'.$climat->id,'method' => 'delete']) !!}
+                            {!! Form::open(['url'=>'admin/climats/'.$climat->id,'method' => 'delete']) !!}
                             {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                             {!! Form::close() !!}
                         @endif

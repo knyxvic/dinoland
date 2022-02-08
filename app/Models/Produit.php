@@ -9,8 +9,10 @@ class Produit extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function category(){
-        return $this->belongsTo(Category_Produit::class);
+        return $this->belongsTo(Categorie::class);
     }
     public function taxe(){
         return $this->belongsTo(Taxe::class);

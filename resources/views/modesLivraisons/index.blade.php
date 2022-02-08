@@ -22,7 +22,7 @@
                     <td>@if($modeLivraison->commandes->count()>0)
                             Ne peut pas être supprimer car des commandes sont associés
                         @else
-                            {!! Form::open(['url'=>'modesLivraisons/'.$modeLivraison->id,'method' => 'delete']) !!}
+                            {!! Form::open(['url'=>'admin/modesLivraisons/'.$modeLivraison->id,'method' => 'delete']) !!}
                             {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                             {!! Form::close() !!}
                         @endif

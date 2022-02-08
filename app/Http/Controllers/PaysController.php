@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PaysRequest;
 use Illuminate\Http\Request;
 
 use App\Models\Pays;
@@ -20,7 +21,7 @@ class PaysController extends Controller
     public function create(){
         return view('pays.create');
     }
-    public function store(Request $request){
+    public function store(PaysRequest $request){
         Pays::create($request->all());
         return redirect()->route('pays.index');
     }
@@ -30,7 +31,7 @@ class PaysController extends Controller
             return redirect()->route('pays.index');
         }
     }
-    public function update(Request $request, $id){
+    public function update(PaysRequest $request, $id){
         $pays = Pays::findOrFail($id);
         $pays->nom = $request->nom;
         $pays->save();

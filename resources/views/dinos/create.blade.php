@@ -16,11 +16,11 @@
     <div class="row">
         <h1>Création d'une dinosaure</h1>
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'dinos']) !!}
+            {!! Form::open(['url'=>'admin/dinos']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', null, ['class'=>'form-control'])}}
-                <span style="color:red">{{$errors->first('title')}}</span>
+                <span style="color:red">{{$errors->first('nom')}}</span>
             </div>
             <div class="form-group">
                 <label for="taille">Taille</label>

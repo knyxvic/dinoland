@@ -17,7 +17,7 @@
         <h1>Création d'une catégorie</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'categories']) !!}
+            {!! Form::open(['url'=>'admin/categories']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', null, ['class'=>'form-control'])}}

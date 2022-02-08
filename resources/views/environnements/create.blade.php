@@ -17,7 +17,7 @@
         <h1>Création d'un environnement</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'environnements']) !!}
+            {!! Form::open(['url'=>'admin/environnements']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', null, ['class'=>'form-control'])}}

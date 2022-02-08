@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StatutCommandeRequest;
 use App\Models\Statut_commande;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class StatutCommandeController extends Controller
     public function create(){
         return view('statutsCommandes.create');
     }
-    public function store(Request $request){
+    public function store(StatutCommandeRequest $request){
         Statut_commande::create($request->all());
         return redirect()->route('statutsCommandes.index');
     }
@@ -29,7 +30,7 @@ class StatutCommandeController extends Controller
             return redirect()->route('statutsCommandes.index');
         }
     }
-    public function update(Request $request, $id){
+    public function update(StatutCommandeRequest $request, $id){
         $statutCommande = Statut_commande::find($id);
         $statutCommande->nom = $request->nom;
         $statutCommande->save();

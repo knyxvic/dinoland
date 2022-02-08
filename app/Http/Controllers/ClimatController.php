@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClimatRequest;
 use App\Models\Climat;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class ClimatController extends Controller
     public function create(){
         return view('climats.create');
     }
-    public function store(Request $request){
+    public function store(ClimatRequest $request){
         Climat::create($request->all());
         return redirect()->route('climats.index');
     }
@@ -29,7 +30,7 @@ class ClimatController extends Controller
             return redirect()->route('climats.index');
         }
     }
-    public function update(Request $request, $id){
+    public function update(ClimatRequest $request, $id){
         $climat = Climat::find($id);
         $climat->nom = $request->nom;
         $climat->save();

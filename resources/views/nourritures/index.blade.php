@@ -22,7 +22,7 @@
                     <td>@if($nourriture->dinos->count()>0)
                             Ne peut pas être supprimer car des dinos sont associés
                         @else
-                            {!! Form::open(['url'=>'nourritures/'.$nourriture->id,'method' => 'delete']) !!}
+                            {!! Form::open(['url'=>'admin/nourritures/'.$nourriture->id,'method' => 'delete']) !!}
                             {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                             {!! Form::close() !!}
                         @endif

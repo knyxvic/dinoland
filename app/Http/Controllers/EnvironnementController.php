@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EnvironnementRequest;
 use App\Models\Environnement;
 use http\Env;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class EnvironnementController extends Controller
     public function create(){
         return view('environnements.create');
     }
-    public function store(Request $request){
+    public function store(EnvironnementRequest $request){
         Environnement::create($request->all());
         return redirect()->route('environnements.index');
     }
@@ -29,7 +30,7 @@ class EnvironnementController extends Controller
             return redirect()->route('environnements.index');
         }
     }
-    public function update(Request $request, Environnement $environnement){
+    public function update(EnvironnementRequest $request, Environnement $environnement){
         $environnement->nom = $request->nom;
         $environnement->save();
         return redirect()->route('environnements.index');

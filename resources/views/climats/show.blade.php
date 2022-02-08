@@ -17,7 +17,7 @@
         <h1>Climat : {{$climat->nom}}</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'climats/'.$climat->id, 'method'=>'PUT']) !!}
+            {!! Form::open(['url'=>'admin/climats/'.$climat->id, 'method'=>'PUT']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', $climat->nom, ['class'=>'form-control'])}}

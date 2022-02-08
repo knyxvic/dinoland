@@ -17,7 +17,7 @@
         <h1>Création d'un type de personnel</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'typesPersonnels']) !!}
+            {!! Form::open(['url'=>'admin/typesPersonnels']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', null, ['class'=>'form-control'])}}

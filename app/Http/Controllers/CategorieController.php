@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\CategorieRequest;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class CategorieController extends Controller
     public function create(){
         return view('categories.create');
     }
-    public function store(Request $request){
+    public function store(CategorieRequest $request){
         Categorie::create($request->all());
         return redirect()->route('categories.index');
 
@@ -31,7 +32,7 @@ class CategorieController extends Controller
             return redirect()->route('categories.index');
         }
     }
-    public function update(Request $request, $id){
+    public function update(CategorieRequest $request, $id){
         $categorie = Categorie::find($id);
         $categorie->nom = $request->nom;
         $categorie->save();

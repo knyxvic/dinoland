@@ -44,7 +44,7 @@
                     </td>
                     <td>
                         <a href="{{route('enclos.show', $enclo->id)}}" class="btn btn-primary">Modifier</a>
-                        {!! Form::open(['url'=>'enclos/'.$enclo->id,'method' => 'delete']) !!}
+                        {!! Form::open(['url'=>'admin/enclos/'.$enclo->id,'method' => 'delete']) !!}
                         {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                         {!! Form::close() !!}
                     </td>

@@ -17,7 +17,7 @@
         <h1>Création d'une nourriture</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'nourritures']) !!}
+            {!! Form::open(['url'=>'admin/nourritures']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', null, ['class'=>'form-control'])}}

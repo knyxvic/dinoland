@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TaxeRequest;
 use App\Models\Taxe;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class TaxeController extends Controller
     public function create(){
         return view('taxes.create');
     }
-    public function store(Request $request){
+    public function store(TaxeRequest $request){
         Taxe::create($request->all());
         return redirect()->route('taxes.index');
 
@@ -30,7 +31,7 @@ class TaxeController extends Controller
             return redirect()->route('taxes.index');
         }
     }
-    public function update(Request $request, $id){
+    public function update(TaxeRequest $request, $id){
         $taxe = Taxe::find($id);
         $taxe->nom = $request->nom;
         $taxe->taux = $request->taux;

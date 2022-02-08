@@ -17,7 +17,7 @@
         <h1>Type Enclos : {{$typeEnclos->nom}}</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'typeEnclos/'.$typeEnclos->id, 'method'=>'PUT']) !!}
+            {!! Form::open(['url'=>'admin/typeEnclos/'.$typeEnclos->id, 'method'=>'PUT']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', $typeEnclos->nom, ['class'=>'form-control'])}}

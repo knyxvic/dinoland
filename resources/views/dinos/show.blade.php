@@ -17,7 +17,7 @@
         <h1>Dino : {{$dino->nom}}</h1>
 
         <div class="col-6">
-            {!! Form::open(['url'=>'dinos/'.$dino->id, 'method'=>'PUT']) !!}
+            {!! Form::open(['url'=>'admin/dinos/'.$dino->id, 'method'=>'PUT']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', $dino->nom, ['class'=>'form-control'])}}

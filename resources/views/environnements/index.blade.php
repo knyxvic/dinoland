@@ -22,7 +22,7 @@
                     <td>@if($environnement->enclos->count()>0)
                             Ne peut pas être supprimer car des enclos sont associés
                         @else
-                            {!! Form::open(['url'=>'environnements/'.$environnement->id,'method' => 'delete']) !!}
+                            {!! Form::open(['url'=>'admin/environnements/'.$environnement->id,'method' => 'delete']) !!}
                             {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                             {!! Form::close() !!}
                         @endif

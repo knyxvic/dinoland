@@ -17,7 +17,7 @@
         <h1>Création d'un statut de commande</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'statutsCommandes']) !!}
+            {!! Form::open(['url'=>'admin/statutsCommandes']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', null, ['class'=>'form-control'])}}

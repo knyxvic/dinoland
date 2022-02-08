@@ -17,7 +17,7 @@
         <h1>Statut commande : {{$statutCommande->nom}}</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'statutsCommandes/'.$statutCommande->id, 'method'=>'PUT']) !!}
+            {!! Form::open(['url'=>'admin/statutsCommandes/'.$statutCommande->id, 'method'=>'PUT']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', $statutCommande->nom, ['class'=>'form-control'])}}

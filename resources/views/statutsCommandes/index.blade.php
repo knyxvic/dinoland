@@ -22,7 +22,7 @@
                     <td>@if($statutCommande->commandes->count()>0)
                             Ne peut pas être supprimer car des commandes sont associés
                         @else
-                            {!! Form::open(['url'=>'statutsCommandes/'.$statutCommande->id,'method' => 'delete']) !!}
+                            {!! Form::open(['url'=>'admin/statutsCommandes/'.$statutCommande->id,'method' => 'delete']) !!}
                             {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                             {!! Form::close() !!}
                         @endif

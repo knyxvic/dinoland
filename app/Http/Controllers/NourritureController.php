@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NourritureRequest;
 use App\Models\Nourriture;
 use Illuminate\Http\Request;
 
@@ -23,12 +24,12 @@ class NourritureController extends Controller
         Nourriture::create($request->all());
         return redirect()->route('nourritures.index');
     }
-    public function destroy(Nourriture $nourriture){
+    public function destroy(NourritureRequest $nourriture){
         if ($nourriture->delete()) {
             return redirect()->route('nourritures.index');
         }
     }
-    public function update(Request $request, Nourriture $nourriture){
+    public function update(NourritureRequest $request, Nourriture $nourriture){
         $nourriture->nom = $request->nom;
         $nourriture->save();
         return redirect()->route('nourritures.index');

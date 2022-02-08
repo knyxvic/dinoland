@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CaracteristiqueRequest;
 use App\Models\Caracteristique;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class CaracteristiqueController extends Controller
     public function create(){
         return view('caracteristiques.create');
     }
-    public function store(Request $request){
+    public function store(CaracteristiqueRequest $request){
         Caracteristique::create($request->all());
         return redirect()->route('caracteristiques.index');
     }
@@ -29,7 +30,7 @@ class CaracteristiqueController extends Controller
             return redirect()->route('caracteristiques.index');
         }
     }
-    public function update(Request $request, Caracteristique $caracteristique){
+    public function update(CaracteristiqueRequest $request, Caracteristique $caracteristique){
         $caracteristique->nom = $request->nom;
         $caracteristique->save();
         return redirect()->route('caracteristiques.index');

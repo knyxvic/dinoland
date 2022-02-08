@@ -17,7 +17,7 @@
         <h1>Personnel : {{$personnel->nom}} {{$personnel->prenom}}</h1>
 
         <div class="col-6">
-            {!! Form::open(['url'=>'personnels/'.$personnel->id, 'method'=>'PUT']) !!}
+            {!! Form::open(['url'=>'admin/personnels/'.$personnel->id, 'method'=>'PUT']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', $personnel->nom, ['class'=>'form-control'])}}

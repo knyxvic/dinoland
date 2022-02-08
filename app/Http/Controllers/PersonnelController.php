@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PersonnelRequest;
 use App\Models\Adresse;
 use App\Models\Enclos;
 use App\Models\Pays;
@@ -41,7 +42,7 @@ class PersonnelController extends Controller
         return view('personnels.create',['typesPersonnels'=>$typesPersonnels, 'enclos'=>$enclos, 'pays'=>$pays]);
     }
 
-    public function store(Request $request){
+    public function store(PersonnelRequest $request){
         $adresse = Adresse::create($request->all());
         $adresse->save();
         $data = $request->all();
@@ -62,7 +63,7 @@ class PersonnelController extends Controller
         }
     }
 
-    public function update(Request $request, $id){
+    public function update(PersonnelRequest $request, $id){
 
         $personnel = Personnel::findOrFail($id);
         $personnel->update($request->all());

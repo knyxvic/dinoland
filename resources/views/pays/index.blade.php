@@ -22,7 +22,7 @@
                     <td>@if($t_pays->adresses->count()>0)
                             Ne peut pas être supprimer car des adresses sont associés
                         @else
-                            {!! Form::open(['url'=>'pays/'.$t_pays->id,'method' => 'delete']) !!}
+                            {!! Form::open(['url'=>'admin/pays/'.$t_pays->id,'method' => 'delete']) !!}
                             {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                             {!! Form::close() !!}
                         @endif

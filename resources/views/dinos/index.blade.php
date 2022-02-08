@@ -40,7 +40,7 @@
                     </td>
                     <td>
                         <a href="{{route('dinos.show', $dino->id)}}" class="btn btn-primary">Modifier</a>
-                        {!! Form::open(['url'=>'dinos/'.$dino->id,'method' => 'delete']) !!}
+                        {!! Form::open(['url'=>'admin/dinos/'.$dino->id,'method' => 'delete']) !!}
                         {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                         {!! Form::close() !!}
                     </td>

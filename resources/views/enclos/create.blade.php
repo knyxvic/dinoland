@@ -17,7 +17,7 @@
         <h1>Création d'un enclos</h1>
 
         <div class="col-6">
-            {!! Form::open(['url'=>'enclos/', 'method'=>'POST']) !!}
+            {!! Form::open(['url'=>'admin/enclos/', 'method'=>'POST']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', null, ['class'=>'form-control'])}}

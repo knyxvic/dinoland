@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DinoRequest;
 use App\Models\Caracteristique;
 use App\Models\Dino;
 use App\Models\Espece;
@@ -42,7 +43,7 @@ class DinoController extends Controller
         return view('dinos.create',['nourritures'=>$nourritures,'especes'=>$especes,'enclos'=>$enclos,'caracteristiques'=>$caracteristiques]);
     }
 
-    public function store(Request $request){
+    public function store(DinoRequest $request){
         $dino = Dino::create($request->all());
         $dino->enclos()->sync($request->enclos_id);
         $dino->caracteristiques()->sync($request->caracteristiques_id);
@@ -58,7 +59,7 @@ class DinoController extends Controller
         }
     }
 
-    public function update(Request $request, Dino $dino){
+    public function update(DinoRequest $request, Dino $dino){
         $dino->update($request->all());
         $dino->caracteristiques()->sync($request->caracteristiques_id);
         if($dino->enclos->isNotEmpty()){

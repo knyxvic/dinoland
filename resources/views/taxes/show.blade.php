@@ -17,7 +17,7 @@
         <h1>Taxe : {{$taxe->nom}}</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'taxes/'.$taxe->id, 'method'=>'PUT']) !!}
+            {!! Form::open(['url'=>'admin/taxes/'.$taxe->id, 'method'=>'PUT']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', $taxe->nom, ['class'=>'form-control'])}}

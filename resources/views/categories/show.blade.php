@@ -17,7 +17,7 @@
         <h1>Categorie : {{$categorie->nom}}</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'categories/'.$categorie->id, 'method'=>'PUT']) !!}
+            {!! Form::open(['url'=>'admin/categories/'.$categorie->id, 'method'=>'PUT']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', $categorie->nom, ['class'=>'form-control'])}}

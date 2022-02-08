@@ -19,10 +19,10 @@ class CreateProduitsTable extends Migration
             $table->float('prix');
             $table->bigInteger('quantite');
             $table->unsignedBigInteger('taxe_id');
-            $table->unsignedBigInteger('categorie_id');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
             $table->foreign('taxe_id')->references('id')->on('taxes');
-            $table->foreign('categorie_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -35,7 +35,7 @@ class CreateProduitsTable extends Migration
     {
         Schema::table('produits', function (Blueprint $table) {
             $table->dropForeign(['taxe_id']); // Drops index 'geo_state_index'
-            $table->dropForeign(['categorie_id']); // Drops index 'geo_state_index'
+            $table->dropForeign(['category_id']); // Drops index 'geo_state_index'
         });
         Schema::dropIfExists('produits');
     }

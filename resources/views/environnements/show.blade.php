@@ -17,7 +17,7 @@
         <h1>Environnement : {{$environnement->nom}}</h1>
 
         <div class="col-6 offset-3">
-            {!! Form::open(['url'=>'environnements/'.$environnement->id, 'method'=>'PUT']) !!}
+            {!! Form::open(['url'=>'admin/environnements/'.$environnement->id, 'method'=>'PUT']) !!}
             <div class="form-group">
                 <label for="">Nom</label>
                 {{Form::text('nom', $environnement->nom, ['class'=>'form-control'])}}

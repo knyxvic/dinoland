@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EspeceRequest;
 use App\Models\Espece;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class EspeceController extends Controller
     public function create(){
         return view('especes.create');
     }
-    public function store(Request $request){
+    public function store(EspeceRequest $request){
         Espece::create($request->all());
         return redirect()->route('especes.index');
     }
@@ -28,7 +29,7 @@ class EspeceController extends Controller
             return redirect()->route('especes.index');
         }
     }
-    public function update(Request $request, Espece $espece){
+    public function update(EspeceRequest $request, Espece $espece){
         $espece->nom = $request->nom;
         $espece->save();
         return redirect()->route('especes.index');

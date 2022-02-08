@@ -22,7 +22,7 @@
                     <td>@if($categorie->produits->count()>0)
                             Ne peut pas être supprimer car des produits sont associés
                         @else
-                            {!! Form::open(['url'=>'categories/'.$categorie->id,'method' => 'delete']) !!}
+                            {!! Form::open(['url'=>'admin/categories/'.$categorie->id,'method' => 'delete']) !!}
                             {{Form::submit('Supprimer', ['class'=>'btn btn-danger'])}}
                             {!! Form::close() !!}
                         @endif
