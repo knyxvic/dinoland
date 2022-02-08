@@ -11,12 +11,12 @@ use Illuminate\Http\Request;
 class ProduitController extends Controller
 {
     public function index(){
-        $produits = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'category_id')->with(['taxe:id,nom,taux','category:id,nom'])->get();
+        $produits = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'categorie_id')->with(['taxe:id,nom,taux','category:id,nom'])->get();
         return view('produits.index', ['produits'=>$produits]);
     }
 
     public function show($id){
-        $produit = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'category_id')->whereId($id)->with(['taxe:id,nom,taux','category:id,nom'])->first();
+        $produit = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'categorie_id')->whereId($id)->with(['taxe:id,nom,taux','category:id,nom'])->first();
         $taxes = Taxe::select('id','nom')->get();
         $categories = Categorie::select('id','nom')->get();
 
