@@ -11,10 +11,96 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                <div class="hidden sm:flex sm:items-center sm:ml-6 pt-1">
+                    <x-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                <div>Dinos</div>
+
+                                <div class="ml-1">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </x-slot>
+
+                        <x-slot name="content">
+                            <x-dropdown-link :href="route('caracteristiques.index')" active="request()->routeIs('caracteristiques')">
+                                {{ __('Caracteristiques') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('nourritures.index')" active="request()->routeIs('nourritures')">
+                                {{ __('Nourritures') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('especes.index')" active="request()->routeIs('especes')">
+                                {{ __('Especes') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('dinos.index')" active="request()->routeIs('dinos')">
+                                {{ __('Dinos') }}
+                            </x-dropdown-link>
+                        </x-slot>
+                    </x-dropdown>
+
+                    <x-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                <div>Enclos</div>
+
+                                <div class="ml-1">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </x-slot>
+
+                        <x-slot name="content">
+                            <x-dropdown-link :href="route('typeEnclos.index')" active="request()->routeIs('typeEnclos')">
+                                {{ __('Types Enclos') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('climats.index')" active="request()->routeIs('climats')">
+                                {{ __('Climats') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('environnements.index')" active="request()->routeIs('environnements')">
+                                {{ __('Environnements') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('enclos.index')" active="request()->routeIs('enclos')">
+                                {{ __('Enclos') }}
+                            </x-dropdown-link>
+                        </x-slot>
+                    </x-dropdown>
+
+                    <x-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                <div>Produits</div>
+
+                                <div class="ml-1">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </x-slot>
+
+                        <x-slot name="content">
+                            <x-dropdown-link :href="route('modesLivraisons.index')" active="request()->routeIs('modesLivraisons')">
+                                {{ __('Modes Livraisons') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('statutsCommandes.index')" active="request()->routeIs('statutsCommandes')">
+                                {{ __('Statuts Commandes') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('taxes.index')" active="request()->routeIs('taxes')">
+                                {{ __('Taxes') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('categories.index')" active="request()->routeIs('categories')">
+                                {{ __('Categories') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('produits.index')" active="request()->routeIs('produits')">
+                                {{ __('Produits') }}
+                            </x-dropdown-link>
+                        </x-slot>
+                    </x-dropdown>
                 </div>
             </div>
 

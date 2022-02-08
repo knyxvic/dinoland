@@ -12,7 +12,7 @@ class Produit extends Model
     protected $guarded = ['id'];
 
     public function category(){
-        return $this->belongsTo(Categorie::class);
+        return $this->belongsTo(Categorie::class, 'categorie_id');
     }
     public function taxe(){
         return $this->belongsTo(Taxe::class);

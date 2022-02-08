@@ -21,13 +21,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 */
+
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/', function () {
         return view('welcome');
     });
+
     Route::get('/dashboard',function () {
         return view('dashboard');
-    });
+    })->name('dashboard');
 
     Route::resource('/caracteristiques', \App\Http\Controllers\CaracteristiqueController::class);
     Route::resource('/categories', \App\Http\Controllers\CategorieController::class);
@@ -50,6 +52,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
 // Ne pas faire controller adresse ?
 // TODO : voir si création adresse en meme temps que la creation personnel
+//TODO : ajouter img produit
 
 Route::view("/testMarket",'testMarket.index');
 

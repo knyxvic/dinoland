@@ -1,6 +1,6 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<div class="container">
+@extends('layouts.admin')
+
+@section('content')
     <div class="row col-6 offset-3">
         <h1>Liste des enclos</h1>
         <a href="{{route('enclos.create')}}" class="btn btn-secondary col-2 offset-3">Create</a>
@@ -53,6 +53,6 @@
             </tbody>
         </table>
     </div>
-</div>
+@stop
 
 
