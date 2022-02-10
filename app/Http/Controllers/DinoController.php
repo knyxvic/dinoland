@@ -45,7 +45,7 @@ class DinoController extends Controller
 
     public function store(DinoRequest $request){
         $dino = Dino::create($request->all());
-        $dino->enclos()->sync($request->enclos_id);
+        $dino->enclos()->sync($request->enclos_id, ['dateArrive'=>$request->dateArrive]);
         $dino->caracteristiques()->sync($request->caracteristiques_id);
         return redirect()->route('dinos.index');
     }

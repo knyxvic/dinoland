@@ -38,12 +38,12 @@ class DatabaseSeeder extends Seeder
         });
 
         \App\Models\Environnement::factory(10)->create();
-        \App\Models\Type_enclos::factory(10)->create();
+        \App\Models\TypeEnclos::factory(10)->create();
         \App\Models\Climat::factory(10)->create();
         \App\Models\Enclos::factory(10)
             ->create()
             ->each(function($enclos) {
-                $enclos->environnement()->attach(
+                $enclos->environnements()->attach(
                     Environnement::all()->random(rand(1, 3))->modelKeys(),
                     ['superficie' => rand(1,100)]
                 );
@@ -56,6 +56,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Categorie::factory(10)->create();
         \App\Models\Produit::factory(10)->create();
 
+        \App\Models\Admin::factory(10)->create();
         \App\Models\Client::factory(10)
             ->create()
             ->each(function ($client){
@@ -69,8 +70,8 @@ class DatabaseSeeder extends Seeder
             })
         ;
 
-        \App\Models\Mode_livraison::factory(10)->create();
-        \App\Models\Statut_commande::factory(10)->create();
+        \App\Models\ModeLivraison::factory(10)->create();
+        \App\Models\StatutCommande::factory(10)->create();
         \App\Models\Commande::factory(10)
             ->create()
             ->each(function ($commande){
@@ -89,7 +90,7 @@ class DatabaseSeeder extends Seeder
 
 
 
-        \App\Models\Type_personnel::factory(10)->has(
+        \App\Models\TypePersonnel::factory(10)->has(
             \App\Models\Personnel::factory(10)
         )->create()
             ->each(function($type){
@@ -100,8 +101,6 @@ class DatabaseSeeder extends Seeder
             });
         });
 
-
-        User::factory(10)->create();
 
 
 

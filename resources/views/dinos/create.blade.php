@@ -39,6 +39,12 @@
                 {{Form::select('enclos_id',$enclos, ['class'=>'form-select'])}}
             </div>
             <div class="form-group">
+                <label for="dateArrive">Date Arrive</label>
+                <input type="date" id="dateArrive" name="dateArrive">
+                <span style="color:red">{{$errors->first('dateArrive')}}</span>
+
+            </div>
+            <div class="form-group">
                 <label for="">Caracteristiques</label>
                 {{Form::select('caracteristiques_id[]', $caracteristiques, null,['class'=>'form-select form-select-lg mb-3','multiple'])}}
             </div>

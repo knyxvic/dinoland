@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class Type_enclosFactory extends Factory
+class StatutCommandeFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,7 +15,6 @@ class Type_enclosFactory extends Factory
     {
         return [
             'nom' => $this->faker->word(),
-
         ];
     }
 }

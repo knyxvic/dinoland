@@ -16,7 +16,7 @@ class EnclosFactory extends Factory
         return [
             'nom'=>$this->faker->word(),
             'superficie'=>$this->faker->randomFloat(2,0,10000),
-            'type_enclos_id'=>\App\Models\Type_enclos::all()->random()->id,
+            'type_enclos_id'=>\App\Models\TypeEnclos::all()->random()->id,
             'climat_id'=>\App\Models\Climat::all()->random()->id
         ];
     }
