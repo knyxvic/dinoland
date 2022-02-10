@@ -70,8 +70,16 @@ Route::prefix('client')->group(function () {
     Route::post('/login/owner', [\App\Http\Controllers\ClientController::class, 'login'])->name('client.login');
 
     Route::get('/logout', [\App\Http\Controllers\ClientController::class, 'logout'])->name('client.logout');
+    Route::middleware('client')->group(function(){
+        Route::get('/compte',[ClientController::class, 'compte'])->name('client.compte');
+        Route::get('/commande/{id}',[ClientController::class, 'commande'])->name('commande.detail');
+        Route::get('/adresse/',[\App\Http\Controllers\AdresseController::class, 'createClient'])->name('createClient');
+        Route::get('/adresse/{id}',[\App\Http\Controllers\AdresseController::class, 'clientShow'])->name('adresse.detail');
+        Route::put('/adresse/{id}',[\App\Http\Controllers\AdresseController::class, 'update'])->name('clientAdresseEdit');
+        Route::post('/adresse',[\App\Http\Controllers\AdresseController::class, 'store'])->name('adresse.store');
+        Route::get('/panier',[\App\Http\Controllers\ClientController::class, 'panier'])->name('panier');
+    });
 
-    Route::get('/compte',[ClientController::class, 'compte'])->name('client.compte');
 });
 
 // Ne pas faire controller adresse ?

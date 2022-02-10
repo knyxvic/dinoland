@@ -20,7 +20,7 @@ class Adresse extends Model
     }
 
     public function clients(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(Client::class);
     }
     public function adressesLivraisons(){
         return $this->belongsTo(Adresse::class);

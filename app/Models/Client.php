@@ -51,7 +51,7 @@ class Client extends Authenticatable
     public function produits(){
         return $this->belongsToMany(Produit::class)->withPivot('quantite');;
     }
-    public function commande(){
+    public function commandes(){
         return $this->hasMany(Commande::class);
     }
 }
