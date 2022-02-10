@@ -78,6 +78,9 @@ Route::prefix('client')->group(function () {
         Route::put('/adresse/{id}',[\App\Http\Controllers\AdresseController::class, 'update'])->name('clientAdresseEdit');
         Route::post('/adresse',[\App\Http\Controllers\AdresseController::class, 'store'])->name('adresse.store');
         Route::get('/panier',[\App\Http\Controllers\ClientController::class, 'panier'])->name('panier');
+        Route::post('/panier/valider',[\App\Http\Controllers\ClientController::class, 'validerPanier'])->name('panier.valider');
+        Route::delete('/panier/{id}',[\App\Http\Controllers\ClientController::class, 'supprimerProduit'])->name('panier.supprimer');
+        Route::post('/panier/{id}',[\App\Http\Controllers\ClientController::class, 'addProduit'])->name('panier.ajouter');
     });
 
 });
@@ -86,8 +89,9 @@ Route::prefix('client')->group(function () {
 // TODO : revoir les suppressions
 // TODO : voir si création adresse en meme temps que la creation personnel
 //TODO : ajouter img produit
+//TODO : mode livraison / statut commande
 
-Route::get('/accueil', [\App\Http\Controllers\ProduitController::class, 'accueil'])->name('accueil');
+Route::get('/accueil', [\App\Http\Controllers\ClientController::class, 'accueil'])->name('accueil');
 Route::get('/categories/{id}', [\App\Http\Controllers\ProduitController::class, 'categorie'])->name('categories');
 Route::get('/showProducts/{id}', [\App\Http\Controllers\ProduitController::class, 'showProduct'])->name('showProduct');
 

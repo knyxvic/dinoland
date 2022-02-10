@@ -9,6 +9,8 @@ class Commande extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function livraison(){
         return $this->belongsTo(ModeLivraison::class);
     }

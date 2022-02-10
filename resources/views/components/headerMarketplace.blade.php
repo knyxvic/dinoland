@@ -116,6 +116,7 @@
                                 <span>(+100) 123 456 7890</span>
                             </h3>-->
                         </div>
+                        @if(\Illuminate\Support\Facades\Auth::guard('client')->user()!=null)
                         <div class="navbar-cart">
                             <!--<div class="wishlist">
                                 <a href="javascript:void(0)">
@@ -125,35 +126,39 @@
                             </div>-->
                             <div class="cart-items">
                                 <a href="javascript:void(0)" class="main-btn" >
-                                    <i class="lni lni-cart"style="position:relative; top:28%"></i>
+                                    <i class="lni lni-cart" style="position:relative; top:28%"></i>
                                     <span class="total-items">2</span>
                                 </a>
                                 <!-- Shopping Item -->
                                 <div class="shopping-item">
-                                    <div class="dropdown-cart-header">
-                                        <span>2 Items</span>
-                                        <a href="cart.html">View Cart</a>
-                                    </div>
                                     <ul class="shopping-list">
+                                        @foreach($panier->produits as $produit)
                                         <li>
-                                            <a href="javascript:void(0)" class="remove" title="Remove this item"><i
-                                                    class="lni lni-close"></i></a>
+
+                                            <a href="{{route('panier.supprimer',['id'=>$produit->id])}}" class="remove" title="Remove this item"><i
+                                                    class="lni lni-close" style="position:relative; top:28%"></i></a>
+                                            {!! Form::open(['url'=>'client/panier/'.$produit->id, 'method'=>'delete']) !!}
+                                            {{Form::submit("X", ['class'=>'remove'])}}
+                                            {!! Form::close() !!}
                                             <div class="cart-img-head">
                                                 <a class="cart-img" href="product-details.html"><img
                                                         src="{{ asset('/images/header/cart-items/item1.jpg')}}" alt="#"></a>
                                             </div>
 
+
                                             <div class="content">
                                                 <h4><a href="product-details.html">
-                                                        Apple Watch Series 6</a></h4>
-                                                <p class="quantity">1x - <span class="amount">$99.00</span></p>
+                                                    {{\Illuminate\Support\Str::ucfirst($produit->nom)}}</a></h4>
+                                                <p class="quantity">{{$produit->pivot->quantite}}x - <span class="amount">{{$produit->prix * $produit->taxe->taux}} €</span></p>
                                             </div>
+
                                         </li>
+                                        @endforeach
                                     </ul>
                                     <div class="bottom">
                                         <div class="total">
                                             <span>Total</span>
-                                            <span class="total-amount">$134.00</span>
+                                            <span class="total-amount">{{$panier->totalTTC}} €</span>
                                         </div>
                                         <div class="button">
                                             <a href="{{route('panier')}}" class="btn animate">Voir le panier</a>
@@ -163,6 +168,7 @@
                                 <!--/ End Shopping Item -->
                             </div>
                         </div>
+                            @endif
                     </div>
                 </div>
             </div>
