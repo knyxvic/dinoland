@@ -1,18 +1,8 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.marketplace')
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+@section('content')
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('client.login') }}">
+        <form method="POST" action="{{ route('client.login') }}" class="col-6 offset-3">
         @csrf
 
         <!-- Email Address -->
@@ -52,5 +42,4 @@
                 </x-button>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+@stop
