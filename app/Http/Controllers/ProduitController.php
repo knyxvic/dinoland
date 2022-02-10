@@ -11,12 +11,12 @@ use Illuminate\Http\Request;
 class ProduitController extends Controller
 {
     public function index(){
-        $produits = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'categorie_id')->with(['taxe:id,nom,taux','category:id,nom'])->get();
+        $produits = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'category_id')->with(['taxe:id,nom,taux','category:id,nom'])->get();
         return view('produits.index', ['produits'=>$produits]);
     }
 
     public function show($id){
-        $produit = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'categorie_id')->whereId($id)->with(['taxe:id,nom,taux','category:id,nom'])->first();
+        $produit = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'category_id')->whereId($id)->with(['taxe:id,nom,taux','category:id,nom'])->first();
         $taxes = Taxe::select('id','nom')->get();
         $categories = Categorie::select('id','nom')->get();
 
@@ -47,6 +47,24 @@ class ProduitController extends Controller
         $produit->update($request->all());
         $produit->save();
         return redirect()->route('produits.index');
+    }
 
+    public function accueil(){
+        $produits = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'category_id')->with(['taxe:id,nom,taux','category:id,nom'])->orderBy('created_at')->limit(12)->get();
+        $categories = Categorie::select('id','nom')->get();
+        return view('market.index', ['produits' => $produits, 'categories'=>$categories]);
+    }
+
+    public function categorie($id){
+        $produits = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'category_id')->with(['taxe:id,nom,taux','category:id,nom'])->where('category_id', $id)->orderBy('created_at')->get();
+        $categories = Categorie::select('id','nom')->get();
+        return view('market.index', ['produits' => $produits, 'categories'=>$categories]);
+    }
+
+    public function showProduct($id){
+        $produit = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'category_id')->with(['taxe:id,nom,taux','category:id,nom'])->whereId($id)->orderBy('created_at')->first();
+
+        $categories = Categorie::select('id','nom')->get();
+        return view('market.show',['produit'=>$produit,'categories'=>$categories]);
     }
 }

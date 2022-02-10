@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CategorieRequest;
 use App\Models\Categorie;
+use App\Models\Produit;
 use Illuminate\Http\Request;
 
 class CategorieController extends Controller
 {
     public function index(){
-        $categories = Categorie::select('id', 'nom')->with('produits:id,categorie_id')->get();
+        $categories = Categorie::select('id', 'nom')->with('produits:id,category_id')->get();
         return view('categories.index',['categories'=>$categories]);
     }
     public function show($id){
@@ -38,4 +39,6 @@ class CategorieController extends Controller
         $categorie->save();
         return redirect()->route('categories.index');
     }
+
+
 }

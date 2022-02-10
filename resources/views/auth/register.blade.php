@@ -12,14 +12,26 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Name -->
+            <!-- Nom -->
             <div>
-                <x-label for="name" :value="__('Name')" />
+                <x-label for="nom" :value="__('Nom')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="nom" class="block mt-1 w-full" type="text" name="nom" :value="old('nom')" required autofocus />
             </div>
 
+                <!-- Name -->
+                <div>
+                    <x-label for="prenom" :value="__('Prenom')" />
+
+                    <x-input id="prenom" class="block mt-1 w-full" type="text" name="prenom" :value="old('prenom')" required autofocus />
+                </div>
             <!-- Email Address -->
+                <!-- Name -->
+                <div>
+                    <x-label for="tel" :value="__('Téléphone')" />
+
+                    <x-input id="tel" class="block mt-1 w-full" type="text" name="tel" :value="old('tel')" required autofocus />
+                </div>
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
 

@@ -16,7 +16,7 @@ class CreateEnclosEnvironnementTable extends Migration
         Schema::create('enclos_environnement', function (Blueprint $table) {
             $table->bigInteger('enclos_id')->unsigned();
             $table->bigInteger('environnement_id')->unsigned();
-            $table->float('superficie');
+            $table->float('superficie')->nullable();
             $table->timestamps();
             $table->foreign('enclos_id')->references('id')->on('enclos');
             $table->foreign('environnement_id')->references('id')->on('environnements');

@@ -69,6 +69,12 @@
                 @endif
             </div>
             <div class="form-group">
+                <label for="dateArrive">Date Arrive</label>
+                <input type="date" id="dateArrive" name="dateArrive">
+                <span style="color:red">{{$errors->first('dateArrive')}}</span>
+
+            </div>
+            <div class="form-group">
                 <label for="">Caracteristiques</label>
                 <select name="caracteristiques_id[]" id="" class="form-select js-example-basic-multiple" multiple>
                     @foreach($caracteristiques as $caracteristique)

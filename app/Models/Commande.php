@@ -10,10 +10,10 @@ class Commande extends Model
     use HasFactory;
 
     public function livraison(){
-        return $this->belongsTo(Mode_Livraison::class);
+        return $this->belongsTo(ModeLivraison::class);
     }
     public function statut(){
-        return $this->belongsTo(Statut_Commande::class);
+        return $this->belongsTo(StatutCommande::class);
     }
     public function produits(){
         return $this->belongsToMany(Produit::class)->withPivot('quantite', 'prixHT','taux');;

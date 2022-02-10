@@ -18,7 +18,7 @@ class ProduitFactory extends Factory
             'prix'=>$this->faker->randomFloat(2, 0, 100),
             'quantite'=>$this->faker->randomNumber(),
             'taxe_id'=>\App\Models\Taxe::all()->random()->id,
-            'categorie_id'=>\App\Models\Categorie::all()->random()->id
+            'category_id'=>\App\Models\Categorie::all()->random()->id
         ];
     }
 }

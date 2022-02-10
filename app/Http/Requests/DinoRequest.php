@@ -30,6 +30,7 @@ class DinoRequest extends FormRequest
             'espece_id'=>'required',
             'nourriture_id'=>'required',
             'enclos_id'=>'required',
+            'dateArrive'=>'required'
         ];
     }
 
@@ -43,6 +44,7 @@ class DinoRequest extends FormRequest
             'poids.numeric'=>'Le champs Poids doit être un numérique',
             'nourriture_id.required'=>'Le champs Nourriture est obligatoire',
             'enclos_id.required'=>'Le champs Enclos est obligatoire',
+            'dateArrive.required'=>'Le champs Date Arrive est obligatoire',
         ];
     }
 }

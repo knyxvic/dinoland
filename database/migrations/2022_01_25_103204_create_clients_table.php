@@ -19,8 +19,11 @@ class CreateClientsTable extends Migration
             $table->string('prenom');
             $table->string('tel');
             $table->string('email');
-            $table->unsignedBigInteger('adresse_livraison_id');
-            $table->unsignedBigInteger('adresse_facturation_id');
+            $table->string('password');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
+            $table->unsignedBigInteger('adresse_livraison_id')->nullable();
+            $table->unsignedBigInteger('adresse_facturation_id')->nullable();
             $table->timestamps();
             $table->foreign('adresse_livraison_id')->references('id')->on('adresses');
             $table->foreign('adresse_facturation_id')->references('id')->on('adresses');
