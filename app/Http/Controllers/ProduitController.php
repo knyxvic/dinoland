@@ -49,11 +49,7 @@ class ProduitController extends Controller
         return redirect()->route('produits.index');
     }
 
-    public function accueil(){
-        $produits = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'category_id')->with(['taxe:id,nom,taux','category:id,nom'])->orderBy('created_at')->limit(12)->get();
-        $categories = Categorie::select('id','nom')->get();
-        return view('market.index', ['produits' => $produits, 'categories'=>$categories]);
-    }
+
 
     public function categorie($id){
         $produits = Produit::select('id', 'nom', 'prix','quantite', 'taxe_id', 'category_id')->with(['taxe:id,nom,taux','category:id,nom'])->where('category_id', $id)->orderBy('created_at')->get();
@@ -67,4 +63,6 @@ class ProduitController extends Controller
         $categories = Categorie::select('id','nom')->get();
         return view('market.show',['produit'=>$produit,'categories'=>$categories]);
     }
+
+
 }

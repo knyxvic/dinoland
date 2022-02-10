@@ -450,6 +450,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.75rem;
 }.-ml-px{
   margin-left: -1px;
+}.mb-2{
+  margin-bottom: 0.5rem;
 }.mt-2{
   margin-top: 0.5rem;
 }.mb-4{
@@ -460,6 +462,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1rem;
 }.ml-4{
   margin-left: 1rem;
+}.ml-2{
+  margin-left: 0.5rem;
 }.ml-1{
   margin-left: 0.25rem;
 }.-mr-2{
@@ -472,16 +476,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1.5rem;
 }.mr-2{
   margin-right: 0.5rem;
-}.ml-2{
-  margin-left: 0.5rem;
 }.mt-8{
   margin-top: 2rem;
 }.ml-12{
   margin-left: 3rem;
 }.-mt-px{
   margin-top: -1px;
-}.mb-2{
-  margin-bottom: 0.5rem;
+}.mb-5{
+  margin-bottom: 1.25rem;
+}.mt-5{
+  margin-top: 1.25rem;
+}.mb-0{
+  margin-bottom: 0px;
 }.block{
   display: block;
 }.flex{
@@ -731,6 +737,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.text-gray-600{
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
+}.text-indigo-600{
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
 }.text-gray-400{
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -749,9 +758,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.text-indigo-700{
   --tw-text-opacity: 1;
   color: rgb(67 56 202 / var(--tw-text-opacity));
-}.text-indigo-600{
-  --tw-text-opacity: 1;
-  color: rgb(79 70 229 / var(--tw-text-opacity));
 }.underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -816,7 +822,7 @@ Author: lineicons.com
 -------------------------------- */@font-face {
   font-family: 'LineIcons';
   src: url(/fonts/LineIcons.eot?eddfd4b76bc98b2e546caa074e7a3dd5);
-  src: url(/fonts/LineIcons.eot?eddfd4b76bc98b2e546caa074e7a3dd5) format('embedded-opentype'), url(/fonts/LineIcons.woff2?5225dbd70e7e696a4d5bf18a6104c017) format('woff2'), url(/fonts/LineIcons.woff?06710a5163500233874f0ab903beb005) format('woff'), url(/fonts/LineIcons.ttf?646f2c692df88bef62de2dd30274f265) format('truetype'), url(/fonts/LineIcons.svg?682663fc07add86083e4bc980f2f977f) format('svg');
+  src: url(/fonts/LineIcons.eot?eddfd4b76bc98b2e546caa074e7a3dd5) format('embedded-opentype'), url(/fonts/LineIcons.woff2?5225dbd70e7e696a4d5bf18a6104c017) format('woff2'), url(/fonts/LineIcons.woff?06710a5163500233874f0ab903beb005) format('woff'), url(/fonts/LineIcons.ttf?646f2c692df88bef62de2dd30274f265) format('truetype'), url(/fonts/LineIcons.svg?c93421323ba4cc47e70e4c77b59a66a6) format('svg');
   font-weight: normal;
   font-style: normal;
 }/*------------------------

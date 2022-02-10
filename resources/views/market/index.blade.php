@@ -82,9 +82,13 @@
                     <div class="single-product">
                         <div class="product-image">
                             <img src="{{ asset('/images/products/product-1.jpg')}}" alt="#">
-                            <div class="button">
-                                <a href="#" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
-                            </div>
+                            @if(\Illuminate\Support\Facades\Auth::guard('client')->user())
+                                {!! Form::open(['url'=>route('panier.ajouter',['id'=>$produit->id]), 'method'=>'post']) !!}
+                                {{Form::hidden('quantite', 1)}}
+                                {{Form::submit('Add to Cart', ['class'=>'button btn btn-primary'])}}
+                                {!! Form::close() !!}
+
+                                @endif
                         </div>
                         <div class="product-info">
                             <span class="category">{{Str::ucfirst($produit->category->nom)}}</span>
